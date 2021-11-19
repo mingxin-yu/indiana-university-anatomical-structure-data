@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="padding-bottom-50"> Anatomical Structures Data </h1>
+  <div *ngIf="isLoading">
+    <div> Loading ... </div>
+  </div>
+  <div *ngIf="!isLoading && !loadingSuccess">
+    <div> System Error: Get Anatomical Structures unsuccessful </div>
+  </div>
+  <div *ngIf="!isLoading && loadingSuccess">
+    <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="14px grid" fxLayoutAlign="start start">
+      <div *ngFor="let structure of uniqueAnatomicalStructures" fxFlex="50%">
+        <div (click)="openStructureDetail(structure)">Name: {{structure.name}}</div>
+        <div>ID: {{structure.id}}</div>
+      </div>
+    </div>
+  </div>
+</div>

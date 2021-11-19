@@ -1,4 +1,4 @@
-# IndianaUniversityAnatomicalStructureData
+# Indiana University Anatomical Structure Data App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
 
@@ -6,22 +6,36 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Additional Library Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular Material (mat-icon, mat-dialog)
 
-## Build
+FlexBox
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Components
 
-## Running unit tests
+### Anatomical Structures Component
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  * This component make service call to the herokuapp server, parse the data into array of structures and display them.
+  
+  * This component handle situation when service is loading or failed and display proper messages.
+  
+  * A user can click on the name of the structure, and it opens a dialog with injected data of name and id.
 
-## Running end-to-end tests
+### Structure Detail Popup
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+  * This component is an Angular material dialog with data of a structure's name and id.
 
-## Further help
+  * This component make service call to the ebi service, parse the data into structure detail, and display them.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  * This component handle situation when service is loading or failed and display proper messages.
+
+  * A user can click on the iri link and direct to this page.
+
+## Service
+
+### Anatomical Structures Service
+
+  * getAnatomicalStructures
+
+  * getStructureDetailByID

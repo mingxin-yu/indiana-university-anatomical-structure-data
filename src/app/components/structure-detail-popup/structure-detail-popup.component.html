@@ -1,0 +1,24 @@
+<div class="close-button" [mat-dialog-close]="true">
+  <mat-icon>close</mat-icon>
+</div>
+<div>
+  <header class="modal_header">
+    <h1> {{this.data.name}} </h1>
+  </header>
+  <div>
+    <div *ngIf="isLoading">
+      <div> Loading ... </div>
+    </div>
+    <div *ngIf="!isLoading && !loadingSuccess">
+      <div> System Error: The structure id is invalid </div>
+    </div>
+    <div *ngIf="!isLoading && loadingSuccess">
+      <h2> Description </h2>
+      <p> {{this.detail.description}} </p>
+      <h2> Ontology Link </h2>
+      <p> {{this.detail.ontologyLink}} </p>
+      <h2> IRI </h2>
+      <a href="{{this.detail.iri}}" target="_blank"> {{this.detail.iri}} </a>
+    </div>
+  </div>
+</div>
